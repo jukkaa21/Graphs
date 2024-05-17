@@ -1,6 +1,3 @@
-from polska import graf, draw_map
-
-
 class Node:
     def __init__(self, key_, value_=None):
         self.key = key_
@@ -130,27 +127,3 @@ class NeighbourMatrix:
                 wynik.append((i, edge))
 
         return wynik
-
-
-graph1 = NeighbourList()
-graph2 = NeighbourMatrix()
-
-for i in range(len(graf)):
-    ver = Node(graf[i][0])
-    ver2 = Node(graf[i][1])
-    graph1.insert_vertex(ver)
-    graph1.insert_edge(ver,ver2)
-    graph2.insert_vertex(ver)
-    graph2.insert_edge(ver,ver2)
-
-
-graph1.delete_vertex(Node('K'))
-graph1.delete_edge(Node('W'),Node('E'))
-
-draw_map(graph1)
-
-graph2.delete_vertex(Node('K'))
-graph2.delete_edge(Node('W'),Node('E'))
-
-draw_map(graph2)
-
